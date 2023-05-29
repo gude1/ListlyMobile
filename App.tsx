@@ -6,10 +6,8 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {View} from 'react-native';
 import Navigation from './src/navigation';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import {StatusBar} from 'react-native';
 
 function App(): JSX.Element {
   return <Navigation />;
