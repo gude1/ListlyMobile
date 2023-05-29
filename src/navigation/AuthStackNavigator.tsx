@@ -5,7 +5,7 @@ import OnBoard from '../screens/auth/OnBoard';
 import Signin from '../screens/auth/Signin';
 import Signup from '../screens/auth/Signup';
 
-type AuthStackParamList = {
+export type AuthStackParamList = {
   SignIn: undefined;
   SignUp: undefined;
   OnBoard: undefined;
@@ -14,7 +14,16 @@ type AuthStackParamList = {
 const AuthStack = createNativeStackNavigator<AuthStackParamList>();
 const AuthStackNavigator = () => {
   return (
-    <AuthStack.Navigator>
+    <AuthStack.Navigator
+      screenOptions={{
+        headerTitleStyle: {
+          color: '#4F63AC',
+        },
+        headerTintColor: '#4F63AC',
+        headerShadowVisible: false,
+        statusBarColor: '#fff',
+        statusBarStyle: 'dark',
+      }}>
       <AuthStack.Screen
         name="OnBoard"
         component={OnBoard}

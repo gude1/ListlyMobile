@@ -1,6 +1,13 @@
-import {StyleProp, StyleSheet, Text, View, ViewStyle} from 'react-native';
+import {
+  StatusBar,
+  StyleProp,
+  StyleSheet,
+  Text,
+  SafeAreaView,
+  View,
+  ViewStyle,
+} from 'react-native';
 import React, {ReactNode} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
 
 type ScreenContainerProps = {
   containerStyle?: StyleProp<ViewStyle>;

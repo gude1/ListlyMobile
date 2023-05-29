@@ -5,6 +5,7 @@ import {
   StyleProp,
   ViewStyle,
   TextStyle,
+  TouchableNativeFeedbackProps,
 } from 'react-native';
 import React from 'react';
 
@@ -12,10 +13,13 @@ type ButtonProps = {
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
   title?: string;
-};
-const Button = ({style, title = 'Button', textStyle}: ButtonProps) => {
+} & TouchableNativeFeedbackProps;
+const Button = ({style, title = 'Button', textStyle, onPress}: ButtonProps) => {
   return (
-    <TouchableOpacity style={[styles.btn, style]} activeOpacity={0.8}>
+    <TouchableOpacity
+      style={[styles.btn, style]}
+      activeOpacity={0.8}
+      onPress={onPress}>
       <Text style={[styles.btnTxt, textStyle]}>{title}</Text>
     </TouchableOpacity>
   );
