@@ -26,11 +26,12 @@ const styles = StyleSheet.create({
     flex: 1,
     // borderWidth: 2,
     backgroundColor: '#fff',
-    borderColor: 'red',
+    borderColor: 'green',
   },
   childCtn: {
     width: '100%',
     maxWidth: 1200,
+    flex: 1,
     // borderWidth: 2,
     alignSelf: 'center',
     borderColor: 'purple',

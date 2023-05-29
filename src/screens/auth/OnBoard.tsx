@@ -4,11 +4,12 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import OnBoardSvg from '../../assets/images/onboard.svg';
 import ScreenContainer from '../../components/ScreenContainer';
 import Button from '../../components/Button';
+import {SCREEN_HEIGHT} from '../../constant';
 
 const OnBoard = ({}) => {
   return (
     <ScreenContainer>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView>
         <View style={styles.container}>
           <OnBoardSvg style={styles.onboardSvg} />
           <Text style={styles.introTxt}>You’ll Find</Text>
@@ -43,15 +44,16 @@ const OnBoard = ({}) => {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
-    justifyContent: 'center',
     // borderWidth: 2,
-    borderColor: 'red',
+    alignItems: 'center',
+    minHeight: SCREEN_HEIGHT,
+    justifyContent: 'center',
+    borderColor: 'green',
   },
   onboardSvg: {
     width: 357,
     height: 209,
-    marginTop: 30,
+    marginTop: 50,
   },
   introTxt: {
     fontSize: 40,
