@@ -12,10 +12,6 @@ import Navigation from './src/navigation';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 function App(): JSX.Element {
-  return (
-    <SafeAreaView>
-      <Navigation />
-    </SafeAreaView>
-  );
+  return <Navigation />;
 }
 export default App;
