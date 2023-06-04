@@ -44,8 +44,7 @@ const Signup = ({navigation}: SignupProps) => {
               value={true}
             />
             <Text style={styles.termsTxt}>
-              I agree with {'  '}
-              <Text style={styles.termsLink}>Terms & Privacy</Text>
+              I agree with <Text style={styles.termsLink}>Terms & Privacy</Text>
             </Text>
           </View>
           <Button style={{marginTop: 25}} title="Sign Up" />
