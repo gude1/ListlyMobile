@@ -52,7 +52,7 @@ const Signup = ({navigation}: SignupProps) => {
             Already have an account?{'  '}
             <Text
               style={styles.termsLink}
-              onPress={() => navigation.push('SignIn')}>
+              onPress={() => navigation.navigate('SignIn')}>
               Sign In
             </Text>
           </Text>

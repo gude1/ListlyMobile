@@ -33,7 +33,7 @@ const Signin = ({navigation}: SigninProps) => {
             Don't have an account?{'  '}
             <Text
               style={styles.termsLink}
-              onPress={() => navigation.push('SignUp')}>
+              onPress={() => navigation.navigate('SignUp')}>
               Sign Up
             </Text>
           </Text>

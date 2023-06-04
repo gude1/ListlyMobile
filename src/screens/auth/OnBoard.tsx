@@ -47,12 +47,12 @@ const OnBoard = ({navigation}: OnBoardProps) => {
           <Button
             title="Sign Up"
             style={{marginTop: 20}}
-            onPress={() => navigation.push('SignUp')}
+            onPress={() => navigation.navigate('SignUp')}
           />
           <Button
             title="Sign In"
             style={{marginTop: 20, backgroundColor: 'transparent'}}
-            onPress={() => navigation.push('SignIn')}
+            onPress={() => navigation.navigate('SignIn')}
             textStyle={{color: '#4F63AC'}}
           />
         </View>
