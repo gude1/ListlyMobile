@@ -1,8 +1,6 @@
 import {
-  StatusBar,
   StyleProp,
   StyleSheet,
-  Text,
   SafeAreaView,
   View,
   ViewStyle,
@@ -31,7 +29,6 @@ export default ScreenContainer;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // borderWidth: 2,
     backgroundColor: '#fff',
     borderColor: 'green',
   },
@@ -39,7 +36,6 @@ const styles = StyleSheet.create({
     width: '100%',
     maxWidth: 1200,
     flex: 1,
-    // borderWidth: 2,
     alignSelf: 'center',
     borderColor: 'purple',
   },
