@@ -13,8 +13,10 @@ const ProfileStackNavigator = () => {
     <ProfileStack.Navigator
       screenOptions={{
         headerShadowVisible: false,
+        statusBarColor: '#fff',
+        statusBarStyle: 'dark',
       }}>
-      <ProfileStack.Screen name="Profile" component={Profile} />
+      <ProfileStack.Screen name="Profile" component={Profile} options={{}} />
     </ProfileStack.Navigator>
   );
 };

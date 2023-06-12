@@ -11,7 +11,7 @@ import OnBoardSvg from '../../assets/images/onboard.svg';
 import ScreenContainer from '../../components/ScreenContainer';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import Button from '../../components/Button';
-import {SCREEN_HEIGHT} from '../../constant';
+import {SCREEN_HEIGHT} from "../../constants/lengths";
 import {AuthStackParamList} from '../../navigation/AuthStackNavigator';
 
 type OnBoardProps = NativeStackScreenProps<AuthStackParamList, 'OnBoard'> & {};

@@ -15,6 +15,8 @@ const HomeStackNavigator = () => {
     <HomeStack.Navigator
       screenOptions={{
         headerShadowVisible: false,
+        statusBarColor: '#fff',
+        statusBarStyle: 'dark',
       }}>
       <HomeStack.Screen name="Home" component={Home} options={{}} />
       <HomeStack.Screen name="Product" component={Product} />

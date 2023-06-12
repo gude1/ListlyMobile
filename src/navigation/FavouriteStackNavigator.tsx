@@ -13,6 +13,8 @@ const FavoutiteStackNavigator = () => {
     <FavouriteStack.Navigator
       screenOptions={{
         headerShadowVisible: false,
+        statusBarColor: '#fff',
+        statusBarStyle: 'dark',
       }}>
       <FavouriteStack.Screen name="Favourite" component={Favourite} />
     </FavouriteStack.Navigator>
