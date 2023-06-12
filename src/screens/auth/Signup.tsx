@@ -2,7 +2,7 @@ import {View, Text, StyleSheet, ScrollView, StatusBar} from 'react-native';
 import React from 'react';
 import ScreenContainer from '../../components/ScreenContainer';
 import Input from '../../components/Input';
-import {SCREEN_HEIGHT} from '../../constant';
+import {SCREEN_HEIGHT} from '../../constants/lengths';
 import Button from '../../components/Button';
 import CheckBox from '@react-native-community/checkbox';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
