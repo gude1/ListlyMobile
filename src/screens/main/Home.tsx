@@ -4,6 +4,8 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import IconButton from '../../components/IconButton';
 import ScreenContainer from '../../components/ScreenContainer';
 import TableSvg from '../../assets/images/table.svg';
+import BedSvg from '../../assets/images/bed.svg';
+
 // type HomeProps = NativeStackScreenProps<AuthStackParamList, 'SignUp'> & {};
 const Home = () => {
   return (
@@ -15,6 +17,8 @@ const Home = () => {
           renderItem={({item, index}) => {
             if (index == 2) {
               return <IconButton selected />;
+            } else if (index % 2 > 0) {
+              return <IconButton SvgIcon={BedSvg} />;
             } else {
               return <IconButton SvgIcon={TableSvg} />;
             }

@@ -15,6 +15,7 @@ const HomeStackNavigator = () => {
     <HomeStack.Navigator
       screenOptions={{
         headerShadowVisible: false,
+        headerTitle: 'Find all you need',
         statusBarColor: '#fff',
         statusBarStyle: 'dark',
       }}>
