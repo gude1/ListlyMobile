@@ -44,6 +44,9 @@ const RootStack = createBottomTabNavigator<RootStackParamList>();
 const RootStackNavigator = () => {
   return (
     <RootStack.Navigator
+      safeAreaInsets={{
+        bottom: 0,
+      }}
       screenOptions={{
         headerShadowVisible: false,
         headerShown: false,

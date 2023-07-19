@@ -5,12 +5,13 @@ import IconButton from '../../components/IconButton';
 import ScreenContainer from '../../components/ScreenContainer';
 import TableSvg from '../../assets/images/table.svg';
 import BedSvg from '../../assets/images/bed.svg';
+import ProductItem from '../../components/ProductItem';
 
 // type HomeProps = NativeStackScreenProps<AuthStackParamList, 'SignUp'> & {};
 const Home = () => {
   return (
     <ScreenContainer>
-      <View style={{paddingTop: 15}}>
+      <>
         <FlatList
           data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
           ItemSeparatorComponent={() => <View style={{height: 40}} />}
@@ -26,7 +27,21 @@ const Home = () => {
           showsHorizontalScrollIndicator={false}
           horizontal
         />
-      </View>
+        <View />
+        <FlatList
+          data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]}
+          style={{marginTop: 10}}
+          numColumns={2}
+          showsVerticalScrollIndicator={false}
+          renderItem={({item, index}) => {
+            return (
+              <View style={{flex: 1, alignItems: 'center'}}>
+                <ProductItem />
+              </View>
+            );
+          }}
+        />
+      </>
     </ScreenContainer>
   );
 };

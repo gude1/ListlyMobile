@@ -15,11 +15,14 @@ const HomeStackNavigator = () => {
     <HomeStack.Navigator
       screenOptions={{
         headerShadowVisible: false,
-        headerTitle: 'Find all you need',
         statusBarColor: '#fff',
         statusBarStyle: 'dark',
       }}>
-      <HomeStack.Screen name="Home" component={Home} options={{}} />
+      <HomeStack.Screen
+        name="Home"
+        component={Home}
+        options={{headerTitle: 'Find all you need'}}
+      />
       <HomeStack.Screen name="Product" component={Product} />
     </HomeStack.Navigator>
   );

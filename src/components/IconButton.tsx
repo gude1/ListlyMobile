@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   ctn: {
     alignItems: 'center',
     width: 60,
-    minHeight: 60,
+    minHeight: 80,
   },
   btn: {
     backgroundColor: '#F5F5F5',
