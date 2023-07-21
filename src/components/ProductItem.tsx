@@ -8,7 +8,7 @@ const ProductItem = ({}: ProductItemProps) => {
       <Image
         style={{width: 180, height: 236, borderRadius: 10}}
         progressiveRenderingEnabled
-        source={require('../assets/images/test.jpeg')}
+        source={require('../assets/images/splash.png')}
       />
       <View style={styles.textctn}>
         <Text style={styles.name}>Black Simple Lamp</Text>
@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
   ctn: {
     // borderWidth: 2,
     borderColor: 'red',
-    marginHorizontal: 8,
-    marginVertical: 8,
+    // marginHorizontal: 8,
+    // marginVertical: 8,
   },
   name: {
     fontFamily: 'Montserrat',
