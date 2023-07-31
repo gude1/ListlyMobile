@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
   },
   termsLink: {
     fontWeight: 'bold',
+    fontFamily: 'Montserrat',
     color: '#4F63AC',
   },
 });

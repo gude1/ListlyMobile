@@ -1,11 +1,11 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from '../screens/main/Home';
-import Product from '../screens/main/Product';
+import ProductDetail from '../screens/main/ProductDetail';
 
 export type HomeStackParamList = {
   Home: undefined;
-  Product: undefined;
+  ProductDetail: undefined;
 };
 
 const HomeStack = createNativeStackNavigator<HomeStackParamList>();
@@ -23,7 +23,16 @@ const HomeStackNavigator = () => {
         component={Home}
         options={{headerTitle: 'Find all you need'}}
       />
-      <HomeStack.Screen name="Product" component={Product} />
+      <HomeStack.Screen
+        name="ProductDetail"
+        component={ProductDetail}
+        options={{
+          statusBarTranslucent: true,
+          statusBarColor: 'transparent',
+          statusBarStyle: 'dark',
+          headerShown: false,
+        }}
+      />
     </HomeStack.Navigator>
   );
 };

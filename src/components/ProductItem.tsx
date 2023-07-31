@@ -1,20 +1,37 @@
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  ImageSourcePropType,
+} from 'react-native';
 import React from 'react';
 
-type ProductItemProps = {};
-const ProductItem = ({}: ProductItemProps) => {
+type ProductItemProps = {
+  onPress?: () => void;
+  title?: string;
+  amount?: string;
+  image?: ImageSourcePropType;
+};
+const ProductItem = ({
+  onPress,
+  title = 'Black Simple Lamp',
+  amount = '$12.00',
+  image = require('../assets/images/1.jpg'),
+}: ProductItemProps) => {
   return (
-    <View style={styles.ctn}>
+    <TouchableOpacity style={styles.ctn} onPress={onPress}>
       <Image
         style={{width: 180, height: 236, borderRadius: 10}}
         progressiveRenderingEnabled
-        source={require('../assets/images/splash.png')}
+        source={image}
       />
       <View style={styles.textctn}>
-        <Text style={styles.name}>Black Simple Lamp</Text>
-        <Text style={styles.amount}>$ 12.00</Text>
+        <Text style={styles.name}>{title}</Text>
+        <Text style={styles.amount}>{amount}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

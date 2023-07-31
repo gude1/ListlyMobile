@@ -15,11 +15,13 @@ import ScreenContainer from '../../components/ScreenContainer';
 import TableSvg from '../../assets/images/table.svg';
 import BedSvg from '../../assets/images/bed.svg';
 import ProductItem from '../../components/ProductItem';
+import Button from '../../components/Button';
+import {HomeStackParamList} from '../../navigation/HomeStackNavigator';
 
-// type HomeProps = NativeStackScreenProps<AuthStackParamList, 'SignUp'> & {};
-const Home = () => {
+type HomeProps = NativeStackScreenProps<HomeStackParamList, 'Home'> & {};
+const Home = ({navigation}: HomeProps) => {
   const {width, height} = useWindowDimensions();
-  const numColumns = Math.min(Math.floor(width / 200), 6);
+  const numColumns = Math.min(Math.floor(width / 190), 6);
 
   const renderProductCatItems: ListRenderItem<number> | null | undefined = ({
     item,
@@ -38,9 +40,20 @@ const Home = () => {
     item,
     index,
   }) => {
+    let image = null;
+    if (index == 2) {
+      image = require('../../assets/images/1.jpg');
+    } else if (index % 2 > 0) {
+      image = require('../../assets/images/2.jpg');
+    } else {
+      image = require('../../assets/images/3.jpg');
+    }
     return (
       <View style={styles.productItemCtn}>
-        <ProductItem />
+        <ProductItem
+          image={image}
+          onPress={() => navigation.navigate('ProductDetail')}
+        />
       </View>
     );
   };
@@ -51,7 +64,7 @@ const Home = () => {
         <FlatList
           data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
           style={{height: 80}}
-          ItemSeparatorComponent={() => <View style={{height: 40}} />}
+          ItemSeparatorComponent={() => <View style={{height: 20}} />}
           renderItem={renderProductCatItems}
           showsHorizontalScrollIndicator={false}
           horizontal
@@ -62,7 +75,7 @@ const Home = () => {
         data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]}
         style={{marginTop: 10}}
         contentContainerStyle={styles.productListCtn}
-        ItemSeparatorComponent={() => <View style={{height: 10}} />}
+        ItemSeparatorComponent={() => <View style={{height: 20}} />}
         numColumns={numColumns}
         showsVerticalScrollIndicator={false}
         renderItem={renderProductList}
