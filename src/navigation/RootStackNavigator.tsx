@@ -37,7 +37,7 @@ const renderTabIcon = (params: TabIconParams) => {
       <Icon fill={PRIMARY_COLOR} color={PRIMARY_COLOR} stroke={PRIMARY_COLOR} />
     );
   }
-  return <Icon />;
+  return <Icon stroke="#999999" />;
 };
 
 const RootStack = createBottomTabNavigator<RootStackParamList>();

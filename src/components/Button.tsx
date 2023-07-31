@@ -13,14 +13,22 @@ type ButtonProps = {
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
   title?: string;
+  Icon?: React.ReactElement;
 } & TouchableNativeFeedbackProps;
-const Button = ({style, title = 'Button', textStyle, onPress}: ButtonProps) => {
+const Button = ({
+  style,
+  title = 'Button',
+  Icon,
+  textStyle,
+  onPress,
+}: ButtonProps) => {
   return (
     <TouchableOpacity
       style={[styles.btn, style]}
       activeOpacity={0.8}
       onPress={onPress}>
-      <Text style={[styles.btnTxt, textStyle]}>{title}</Text>
+      {Icon}
+      {title && <Text style={[styles.btnTxt, textStyle]}>{title}</Text>}
     </TouchableOpacity>
   );
 };

@@ -4,12 +4,16 @@ import {
   ImageBackground,
   StyleSheet,
   TouchableOpacity,
+  Platform,
 } from 'react-native';
 import React from 'react';
 import BackBtn from '../../assets/images/back_btn.svg';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {HomeStackParamList} from '../../navigation/HomeStackNavigator';
-import {TEXT_COLOR} from '../../constants/colors';
+import {PRIMARY_COLOR, TEXT_COLOR} from '../../constants/colors';
+import Button from '../../components/Button';
+import IconButton from '../../components/IconButton';
+import BookMarkIcon from '../../assets/images/bookmark.svg';
 
 type ProductDetailProps = NativeStackScreenProps<
   HomeStackParamList,
@@ -36,7 +40,12 @@ const ProductDetail = ({navigation}: ProductDetailProps) => {
             best match for your home.
           </Text>
 
-          <View style={styles.actionPanel}></View>
+          <View style={styles.actionPanel}>
+            <TouchableOpacity activeOpacity={0.8} style={styles.bookmarkBtn}>
+              <BookMarkIcon fill={PRIMARY_COLOR} />
+            </TouchableOpacity>
+            <Button title="Contact Seller" style={styles.contacBtn} />
+          </View>
         </View>
       </ImageBackground>
     </View>
@@ -89,6 +98,38 @@ const styles = StyleSheet.create({
   },
   actionPanel: {
     marginTop: 80,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    // borderWidth: 2,
+  },
+  bookmarkBtn: {
+    borderRadius: 8,
+    width: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 60,
+    display: 'flex',
+    backgroundColor: '#F0F0F0',
+  },
+  contacBtn: {
+    borderRadius: 8,
+    marginLeft: 15,
+    width: 200,
+    ...Platform.select({
+      ios: {
+        shadowColor: 'rgba(48, 48, 48, 0.25)',
+        shadowOpacity: 1,
+        shadowRadius: 20,
+        shadowOffset: {
+          width: 0,
+          height: 10,
+        },
+      },
+      android: {
+        elevation: 5,
+      },
+    }),
   },
 });
 
