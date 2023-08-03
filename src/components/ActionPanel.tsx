@@ -1,11 +1,23 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import {PRIMARY_COLOR} from '../constants/colors';
+import ArrowRight from '../assets/images/arrowright.svg';
 
-type ActionPanelProps = {};
-const ActionPanel = () => {
+type ActionPanelProps = {
+  title?: string;
+  subtitle?: string;
+};
+const ActionPanel = ({
+  title = 'Title',
+  subtitle = 'Subtitle',
+}: ActionPanelProps) => {
   return (
     <View style={styles.ctn}>
-      <Text>ActionPanel</Text>
+      <View>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.subTitle}>{subtitle}</Text>
+      </View>
+      <ArrowRight style={{alignSelf: 'center'}} />
     </View>
   );
 };
@@ -16,6 +28,38 @@ const styles = StyleSheet.create({
   ctn: {
     width: '100%',
     maxWidth: 1200,
-    borderWidth: 1,
+    paddingVertical: 18,
+    paddingLeft: 20,
+    marginTop: 26,
+    paddingRight: 15,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    ...Platform.select({
+      ios: {
+        shadowColor: '#8A959E',
+        shadowOffset: {width: 0, height: 7},
+        shadowRadius: 40,
+        shadowOpacity: 0.2,
+        backgroundColor: 'white',
+      },
+      android: {
+        elevation: 2,
+        backgroundColor: 'white',
+      },
+    }),
+  },
+  title: {
+    color: PRIMARY_COLOR,
+    fontFamily: 'Montserrat',
+    fontSize: 18,
+    fontWeight: '700',
+  },
+  subTitle: {
+    textAlign: 'justify',
+    fontFamily: 'Montserrat',
+    fontSize: 12,
+    fontWeight: '400',
+    lineHeight: 15,
+    marginTop: 5,
   },
 });
