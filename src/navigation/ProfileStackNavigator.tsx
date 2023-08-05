@@ -4,13 +4,13 @@ import Profile from '../screens/main/Profile';
 import ArrowSvg from '../assets/images/arrow.svg';
 import Settings from '../screens/main/Settings';
 import MyList from '../screens/main/MyList';
-import AddToList from '../screens/main/AddToList';
+import CreateList from '../screens/main/CreateList';
 
 export type ProfileStackParamList = {
   Profile: undefined;
   Settings: undefined;
   MyListings: undefined;
-  AddToList: undefined;
+  CreateList: undefined;
 };
 
 const ProfileStack = createNativeStackNavigator<ProfileStackParamList>();
@@ -41,8 +41,8 @@ const ProfileStackNavigator = () => {
       />
 
       <ProfileStack.Screen
-        name="AddToList"
-        component={AddToList}
+        name="CreateList"
+        component={CreateList}
         options={{
           headerTitle: 'Create a new listing',
         }}

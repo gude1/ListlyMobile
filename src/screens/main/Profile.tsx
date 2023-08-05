@@ -35,7 +35,7 @@ const Profile = ({navigation}: ProfileProps) => {
         title="Add a new listing"
         style={styles.actionBtn}
         onPress={() => {
-          navigation.navigate('AddToList');
+          navigation.navigate('CreateList');
         }}
       />
     </ScreenContainer>
