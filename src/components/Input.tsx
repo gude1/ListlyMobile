@@ -18,6 +18,7 @@ export type InputProps = {
   containerStyle?: StyleProp<ViewStyle>;
   inputCtnStyle?: StyleProp<ViewStyle>;
   inputStyle?: StyleProp<TextStyle>;
+  labelStyle?: StyleProp<TextStyle>;
   error?: string;
   placeholder?: string;
   info?: string;
@@ -66,6 +67,7 @@ const Input = ({
   secureTextEntry,
   textContentType,
   inputStyle,
+  labelStyle,
   value,
   editable,
   inputCtnStyle,
@@ -109,7 +111,7 @@ const Input = ({
 
   return (
     <View style={[styles.ctn, containerStyle]}>
-      {label && <Text style={styles.label}>{label}</Text>}
+      {label && <Text style={[styles.label, labelStyle]}>{label}</Text>}
       <View style={[styles.inputCtn, inputCtnStyle]}>
         <TextInput
           value={value}

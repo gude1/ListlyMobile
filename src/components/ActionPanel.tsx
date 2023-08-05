@@ -17,7 +17,7 @@ type ActionPanelProps = {
 };
 const ActionPanel = ({
   title = 'Title',
-  subtitle = 'Subtitle',
+  subtitle,
   onPress,
 }: ActionPanelProps) => {
   return (
@@ -25,7 +25,7 @@ const ActionPanel = ({
       <View style={styles.ctn}>
         <View>
           <Text style={styles.title}>{title}</Text>
-          <Text style={styles.subTitle}>{subtitle}</Text>
+          {subtitle && <Text style={styles.subTitle}>{subtitle}</Text>}
         </View>
         <ArrowRight style={{alignSelf: 'center'}} />
       </View>

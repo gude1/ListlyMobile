@@ -3,8 +3,16 @@ import React from 'react';
 import ScreenContainer from '../../components/ScreenContainer';
 import EditSvg from '../../assets/images/editpencil.svg';
 import Input from '../../components/Input';
+import {PRIMARY_COLOR, TEXT_COLOR_GRAY} from '../../constants/colors';
+import ActionPanel from '../../components/ActionPanel';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {ProfileStackParamList} from '../../navigation/ProfileStackNavigator';
 
-const Settings = () => {
+type SettingsProps = NativeStackScreenProps<
+  ProfileStackParamList,
+  'Settings'
+> & {};
+const Settings = ({navigation}: SettingsProps) => {
   return (
     <ScreenContainer style={{paddingHorizontal: 20}}>
       <View style={styles.header}>
@@ -20,6 +28,7 @@ const Settings = () => {
         keyboardType="name-phone-pad"
         value="Owolabi Gideon"
         editable={false}
+        labelStyle={styles.inputLabel}
       />
 
       <Input
@@ -30,7 +39,15 @@ const Settings = () => {
         keyboardType="email-address"
         value="Owolabi Gideon"
         editable={false}
+        labelStyle={styles.inputLabel}
       />
+
+      <View style={[styles.header, {marginTop: 49}]}>
+        <Text style={styles.headerText}>Help Center</Text>
+      </View>
+      <ActionPanel title="FAQ" />
+      <ActionPanel title="Contact Us" />
+      <ActionPanel title="Privacy & Terms" />
     </ScreenContainer>
   );
 };
@@ -51,10 +68,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   inputOuterCtn: {
-    width: '100%',
-    maxWidth: 500,
     marginTop: 15,
-    alignSelf: 'center',
     backgroundColor: 'white',
     paddingVertical: 12,
     paddingHorizontal: 16,
@@ -75,8 +89,19 @@ const styles = StyleSheet.create({
   inputCtn: {
     borderWidth: 0,
     paddingHorizontal: 0,
+    maxWidth: 500,
   },
   input: {
     borderWidth: 0,
+    color: PRIMARY_COLOR,
+    // fontFamily: 'Montserrat',
+    fontsize: 14,
+    fontweight: '600',
+  },
+  inputLabel: {
+    fontFamily: 'Montserrat',
+    fontSize: 12,
+    color: TEXT_COLOR_GRAY,
+    fontWeight: '400',
   },
 });
