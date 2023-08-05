@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   },
   childCtn: {
     width: '100%',
-    maxWidth: 1200,
+    maxWidth: 900,
     flex: 1,
     alignSelf: 'center',
     borderColor: 'purple',

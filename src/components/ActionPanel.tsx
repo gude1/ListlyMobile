@@ -1,4 +1,11 @@
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {
+  GestureResponderEvent,
+  Platform,
+  StyleSheet,
+  Text,
+  Pressable,
+  View,
+} from 'react-native';
 import React from 'react';
 import {PRIMARY_COLOR} from '../constants/colors';
 import ArrowRight from '../assets/images/arrowright.svg';
@@ -6,19 +13,23 @@ import ArrowRight from '../assets/images/arrowright.svg';
 type ActionPanelProps = {
   title?: string;
   subtitle?: string;
+  onPress?: ((event: GestureResponderEvent) => void) | undefined;
 };
 const ActionPanel = ({
   title = 'Title',
   subtitle = 'Subtitle',
+  onPress,
 }: ActionPanelProps) => {
   return (
-    <View style={styles.ctn}>
-      <View>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.subTitle}>{subtitle}</Text>
+    <Pressable onPress={onPress}>
+      <View style={styles.ctn}>
+        <View>
+          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.subTitle}>{subtitle}</Text>
+        </View>
+        <ArrowRight style={{alignSelf: 'center'}} />
       </View>
-      <ArrowRight style={{alignSelf: 'center'}} />
-    </View>
+    </Pressable>
   );
 };
 

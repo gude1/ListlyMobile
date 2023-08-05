@@ -22,8 +22,10 @@ export type InputProps = {
   placeholder?: string;
   info?: string;
   success?: string;
+  editable?: boolean | undefined;
   secureTextEntry?: boolean;
   keyboardType?: KeyboardTypeOptions;
+  value?: string | undefined;
   textContentType?:
     | 'none'
     | 'URL'
@@ -64,6 +66,9 @@ const Input = ({
   secureTextEntry,
   textContentType,
   inputStyle,
+  value,
+  editable,
+  inputCtnStyle,
 }: InputProps) => {
   const [hideinputtxt, sethideinputtxt] = useState(secureTextEntry);
 
@@ -105,8 +110,10 @@ const Input = ({
   return (
     <View style={[styles.ctn, containerStyle]}>
       {label && <Text style={styles.label}>{label}</Text>}
-      <View style={styles.inputCtn}>
+      <View style={[styles.inputCtn, inputCtnStyle]}>
         <TextInput
+          value={value}
+          editable={editable}
           style={[styles.input, inputStyle]}
           selectionColor={PRIMARY_COLOR}
           cursorColor={PRIMARY_COLOR}

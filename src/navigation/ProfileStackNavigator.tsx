@@ -2,9 +2,15 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Profile from '../screens/main/Profile';
 import ArrowSvg from '../assets/images/arrow.svg';
+import Settings from '../screens/main/Settings';
+import MyList from '../screens/main/MyList';
+import AddToList from '../screens/main/AddToList';
 
 export type ProfileStackParamList = {
   Profile: undefined;
+  Settings: undefined;
+  MyListings: undefined;
+  AddToList: undefined;
 };
 
 const ProfileStack = createNativeStackNavigator<ProfileStackParamList>();
@@ -22,6 +28,23 @@ const ProfileStackNavigator = () => {
         component={Profile}
         options={{
           headerRight: () => <ArrowSvg />,
+        }}
+      />
+
+      <ProfileStack.Screen name="Settings" component={Settings} />
+      <ProfileStack.Screen
+        name="MyListings"
+        component={MyList}
+        options={{
+          headerTitle: 'My Listings',
+        }}
+      />
+
+      <ProfileStack.Screen
+        name="AddToList"
+        component={AddToList}
+        options={{
+          headerTitle: 'Create a new listing',
         }}
       />
     </ProfileStack.Navigator>
