@@ -5,27 +5,36 @@ import {
   Image,
   TouchableOpacity,
   GestureResponderEvent,
+  ImageSourcePropType,
 } from 'react-native';
 import React from 'react';
 import CancelSvg from '../assets/images/cancel.svg';
 import {TEXT_COLOR} from '../constants/colors';
+import {SvgProps} from 'react-native-svg';
 
 type CartItemProps = {
+  DeleteIcon?: React.FC<SvgProps>;
+  img?: ImageSourcePropType;
+  onDelete?: ((event: GestureResponderEvent) => void) | undefined;
   onPress?: ((event: GestureResponderEvent) => void) | undefined;
 };
-const CartItem = ({onPress}: CartItemProps) => {
+const CartItem = ({img, onPress, onDelete, DeleteIcon}: CartItemProps) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.itemCtn}>
         <Image
-          source={require('../assets/images/11.jpg')}
+          source={img || require('../assets/images/11.jpg')}
           style={styles.cartImg}
           progressiveRenderingEnabled
         />
         <View style={styles.infoCtn}>
           <View style={styles.panel}>
             <Text style={styles.cartName}>Coffee Table</Text>
-            <CancelSvg />
+            {DeleteIcon ? (
+              <DeleteIcon onPress={onDelete} />
+            ) : (
+              <CancelSvg onPress={onDelete} />
+            )}
           </View>
           <Text style={styles.cartPrice}>N500</Text>
         </View>
