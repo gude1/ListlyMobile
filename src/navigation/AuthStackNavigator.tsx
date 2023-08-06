@@ -15,6 +15,7 @@ const AuthStackNavigator = () => {
   return (
     <AuthStack.Navigator
       screenOptions={{
+        animation: 'slide_from_right',
         headerTitleStyle: {
           color: '#4F63AC',
         },

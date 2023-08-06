@@ -19,6 +19,7 @@ const ProfileStackNavigator = () => {
   return (
     <ProfileStack.Navigator
       screenOptions={{
+        animation: 'slide_from_right',
         headerShadowVisible: false,
         statusBarColor: '#fff',
         statusBarStyle: 'dark',

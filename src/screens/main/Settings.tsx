@@ -47,13 +47,6 @@ const Settings = ({navigation}: SettingsProps) => {
       </View>
       <ActionPanel title="FAQ" />
       <ActionPanel title="Contact Us" />
-      <ActionPanel title="Privacy & Terms" />
-      <ActionPanel title="Privacy & Terms" />
-      <ActionPanel title="Privacy & Terms" />
-      <ActionPanel title="Privacy & Terms" />
-      <ActionPanel title="Privacy & Terms" />
-      <ActionPanel title="Privacy & Terms" />
-      <ActionPanel title="Privacy & Terms" />
     </ScreenContainer>
   );
 };

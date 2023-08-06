@@ -15,6 +15,7 @@ const FavoutiteStackNavigator = () => {
     <FavouriteStack.Navigator
       screenOptions={{
         headerShadowVisible: false,
+        animation: 'slide_from_right',
         statusBarColor: '#fff',
         statusBarStyle: 'dark',
       }}>
