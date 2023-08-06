@@ -136,6 +136,7 @@ const Input = ({
 const styles = StyleSheet.create({
   ctn: {
     //  borderWidth: 1,
+    width: '100%',
     borderColor: 'red',
   },
   inputCtn: {

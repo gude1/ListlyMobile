@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import CancelSvg from '../assets/images/cancel.svg';
-import {TEXT_COLOR} from '../constants/colors';
+import {IMG_BACKGROUND_COLOR, TEXT_COLOR} from '../constants/colors';
 import {SvgProps} from 'react-native-svg';
 
 type CartItemProps = {
@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 10,
+    backgroundColor: IMG_BACKGROUND_COLOR,
   },
   cartName: {
     color: '#606060',

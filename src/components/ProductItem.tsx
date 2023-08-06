@@ -7,6 +7,7 @@ import {
   ImageSourcePropType,
 } from 'react-native';
 import React from 'react';
+import {IMG_BACKGROUND_COLOR} from '../constants/colors';
 
 type ProductItemProps = {
   onPress?: () => void;
@@ -22,11 +23,7 @@ const ProductItem = ({
 }: ProductItemProps) => {
   return (
     <TouchableOpacity style={styles.ctn} onPress={onPress}>
-      <Image
-        style={{width: 180, height: 236, borderRadius: 10}}
-        progressiveRenderingEnabled
-        source={image}
-      />
+      <Image style={styles.img} progressiveRenderingEnabled source={image} />
       <View style={styles.textctn}>
         <Text style={styles.name}>{title}</Text>
         <Text style={styles.amount}>{amount}</Text>
@@ -47,6 +44,12 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#606060',
     fontWeight: '400',
+  },
+  img: {
+    width: 180,
+    height: 236,
+    borderRadius: 10,
+    backgroundColor: IMG_BACKGROUND_COLOR,
   },
   amount: {
     fontFamily: 'Montserrat',
