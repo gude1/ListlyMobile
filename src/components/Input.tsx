@@ -152,7 +152,6 @@ const styles = StyleSheet.create({
     flex: 1,
     lineHeight: 17.07,
     fontSize: 14,
-    fontWeight: '500',
     fontFamily: 'Montserrat',
     height: 50,
   },

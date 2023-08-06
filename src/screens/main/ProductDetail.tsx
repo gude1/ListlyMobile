@@ -24,7 +24,7 @@ const ProductDetail = ({navigation}: ProductDetailProps) => {
     <View style={styles.container}>
       <ImageBackground
         progressiveRenderingEnabled
-        source={require('../../assets/images/3.jpg')}
+        source={require('../../assets/images/10.jpg')}
         style={styles.imageBackground}>
         <TouchableOpacity style={styles.backBtn}>
           <BackBtn onPress={() => navigation.pop()} />

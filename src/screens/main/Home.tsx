@@ -1,40 +1,66 @@
 import {
-  Dimensions,
   FlatList,
   ListRenderItem,
-  ScrollView,
   StyleSheet,
-  Text,
   View,
   useWindowDimensions,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import IconButton from '../../components/IconButton';
 import ScreenContainer from '../../components/ScreenContainer';
-import TableSvg from '../../assets/images/table.svg';
-import BedSvg from '../../assets/images/bed.svg';
 import ProductItem from '../../components/ProductItem';
-import Button from '../../components/Button';
 import {HomeStackParamList} from '../../navigation/HomeStackNavigator';
+import {SvgProps} from 'react-native-svg';
+import StarSvg from '../../assets/images/star.svg';
+import LaptopSvg from '../../assets/images/laptop.svg';
+import CarSvg from '../../assets/images/car.svg';
+import TvSvg from '../../assets/images/tv.svg';
 
 type HomeProps = NativeStackScreenProps<HomeStackParamList, 'Home'> & {};
+type ListData = {
+  name: string;
+  icon?: React.FC<SvgProps>;
+};
 const Home = ({navigation}: HomeProps) => {
   const {width, height} = useWindowDimensions();
+  const [selectedtabname, setSelectTabName] = useState('popular');
   const numColumns = Math.min(Math.floor(width / 190), 6);
 
-  const renderProductCatItems: ListRenderItem<number> | null | undefined = ({
-    item,
-    index,
-  }) => {
-    if (index == 2) {
-      return <IconButton selected />;
-    } else if (index % 2 > 0) {
-      return <IconButton SvgIcon={BedSvg} />;
-    } else {
-      return <IconButton SvgIcon={TableSvg} />;
-    }
+  const CAT: ListData[] = [
+    {
+      name: 'Popular',
+      icon: StarSvg,
+    },
+    {
+      name: 'Home Appliances',
+      icon: TvSvg,
+    },
+    {
+      name: 'Furniture',
+    },
+    {
+      name: 'Computers',
+      icon: LaptopSvg,
+    },
+    {
+      name: 'Automobiles',
+      icon: CarSvg,
+    },
+  ];
+
+  const renderProductCatItems: ListRenderItem<ListData> = ({item, index}) => {
+    return (
+      <IconButton
+        name={item.name}
+        onPress={() => setSelectTabName(item.name.toLowerCase())}
+        selected={item.name.toLowerCase() == selectedtabname}
+        SvgIcon={item.icon}
+      />
+    );
   };
+  const CatListkeyExtractor = (item: ListData, index: Number): string =>
+    String(index);
 
   const renderProductList: ListRenderItem<number> | null | undefined = ({
     item,
@@ -42,11 +68,11 @@ const Home = ({navigation}: HomeProps) => {
   }) => {
     let image = null;
     if (index == 2) {
-      image = require('../../assets/images/1.jpg');
+      image = require('../../assets/images/8.jpg');
     } else if (index % 2 > 0) {
-      image = require('../../assets/images/2.jpg');
+      image = require('../../assets/images/10.jpg');
     } else {
-      image = require('../../assets/images/3.jpg');
+      image = require('../../assets/images/12.jpg');
     }
     return (
       <View style={styles.productItemCtn}>
@@ -62,10 +88,10 @@ const Home = ({navigation}: HomeProps) => {
     <ScreenContainer style={{maxWidth: 'auto'}}>
       <View style={styles.productTypeCtn}>
         <FlatList
-          data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+          data={CAT}
           style={{height: 80}}
-          ItemSeparatorComponent={() => <View style={{height: 20}} />}
           renderItem={renderProductCatItems}
+          keyExtractor={CatListkeyExtractor}
           showsHorizontalScrollIndicator={false}
           horizontal
         />
