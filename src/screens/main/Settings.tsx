@@ -1,4 +1,4 @@
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import ScreenContainer from '../../components/ScreenContainer';
 import EditSvg from '../../assets/images/editpencil.svg';
@@ -15,39 +15,41 @@ type SettingsProps = NativeStackScreenProps<
 const Settings = ({navigation}: SettingsProps) => {
   return (
     <ScreenContainer style={{paddingHorizontal: 20}}>
-      <View style={styles.header}>
-        <Text style={styles.headerText}>Personal Information</Text>
-        <EditSvg />
-      </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.header}>
+          <Text style={styles.headerText}>Personal Information</Text>
+          <EditSvg />
+        </View>
 
-      <Input
-        label="Name"
-        containerStyle={styles.inputOuterCtn}
-        inputStyle={styles.input}
-        inputCtnStyle={styles.inputCtn}
-        keyboardType="name-phone-pad"
-        value="Owolabi Gideon"
-        editable={false}
-        labelStyle={styles.inputLabel}
-      />
+        <Input
+          label="Name"
+          containerStyle={styles.inputOuterCtn}
+          inputStyle={styles.input}
+          inputCtnStyle={styles.inputCtn}
+          keyboardType="name-phone-pad"
+          value="Owolabi Gideon"
+          editable={false}
+          labelStyle={styles.inputLabel}
+        />
 
-      <Input
-        label="Email"
-        containerStyle={styles.inputOuterCtn}
-        inputStyle={styles.input}
-        inputCtnStyle={styles.inputCtn}
-        keyboardType="email-address"
-        value="Owolabi Gideon"
-        editable={false}
-        labelStyle={styles.inputLabel}
-      />
+        <Input
+          label="Email"
+          containerStyle={styles.inputOuterCtn}
+          inputStyle={styles.input}
+          inputCtnStyle={styles.inputCtn}
+          keyboardType="email-address"
+          value="Owolabi Gideon"
+          editable={false}
+          labelStyle={styles.inputLabel}
+        />
 
-      <View style={[styles.header, {marginTop: 49}]}>
-        <Text style={styles.headerText}>Help Center</Text>
-      </View>
-      <ActionPanel title="FAQ" />
-      <ActionPanel title="Contact Us" />
-      <ActionPanel title="Privacy & Terms" />
+        <View style={[styles.header, {marginTop: 49}]}>
+          <Text style={styles.headerText}>Help Center</Text>
+        </View>
+        <ActionPanel title="FAQ" />
+        <ActionPanel title="Contact Us" />
+        <ActionPanel title="Privacy & Terms" />
+      </ScrollView>
     </ScreenContainer>
   );
 };

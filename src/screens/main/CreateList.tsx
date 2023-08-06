@@ -1,4 +1,11 @@
-import {ImageBackground, Pressable, StyleSheet, Text, View} from 'react-native';
+import {
+  ImageBackground,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import React from 'react';
 import ScreenContainer from '../../components/ScreenContainer';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
@@ -16,32 +23,34 @@ type CreateListProps = NativeStackScreenProps<
 const CreateList = ({}: CreateListProps) => {
   return (
     <ScreenContainer style={[styles.pageCtn]}>
-      <Text style={styles.pageTitle}>Upload photos</Text>
-      <View style={styles.uploadCtn}>
-        <Pressable>
-          <View style={styles.uploadBtn}>
-            <AddSvg />
-          </View>
-        </Pressable>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Text style={styles.pageTitle}>Upload photos</Text>
+        <View style={styles.uploadCtn}>
+          <Pressable>
+            <View style={styles.uploadBtn}>
+              <AddSvg />
+            </View>
+          </Pressable>
 
-        <ImageBackground
-          style={styles.uploadedImg}
-          source={require('../../assets/images/12.jpg')}>
-          <CancelSvg
-            style={{
-              position: 'absolute',
-              top: -10,
-              right: -10,
-            }}
-          />
-        </ImageBackground>
-      </View>
-      <Input containerStyle={styles.ctnInput} label="Title" />
-      <Input containerStyle={styles.ctnInput} label="Category" />
-      <Input containerStyle={styles.ctnInput} label="Price" />
-      <Input containerStyle={styles.ctnInput} label="Description" />
+          <ImageBackground
+            style={styles.uploadedImg}
+            source={require('../../assets/images/12.jpg')}>
+            <CancelSvg
+              style={{
+                position: 'absolute',
+                top: -10,
+                right: -10,
+              }}
+            />
+          </ImageBackground>
+        </View>
+        <Input containerStyle={styles.ctnInput} label="Title" />
+        <Input containerStyle={styles.ctnInput} label="Category" />
+        <Input containerStyle={styles.ctnInput} label="Price" />
+        <Input containerStyle={styles.ctnInput} label="Description" />
 
-      <Button title="Submit" style={{marginTop: 24}} />
+        <Button title="Submit" style={{marginTop: 24}} />
+      </ScrollView>
     </ScreenContainer>
   );
 };
