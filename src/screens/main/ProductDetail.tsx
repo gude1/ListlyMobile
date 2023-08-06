@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Platform,
+  ScrollView,
 } from 'react-native';
 import React from 'react';
 import BackBtn from '../../assets/images/back_btn.svg';
@@ -31,21 +32,27 @@ const ProductDetail = ({navigation}: ProductDetailProps) => {
         </TouchableOpacity>
 
         <View style={styles.infoModal}>
-          <Text style={styles.productTitle}>Minimal Stand</Text>
-          <Text style={styles.productPrice}>$ 50</Text>
-          <Text style={styles.productDesc}>
-            Minimal Stand is made of by natural wood. The design that is very
-            simple and minimal. This is truly one of the best furnitures in any
-            family for now. With 3 different colors, you can easily select the
-            best match for your home.
-          </Text>
+          <ScrollView showsVerticalScrollIndicator={false}>
+            <View>
+              <Text style={styles.productTitle}>Minimal Stand</Text>
+              <Text style={styles.productPrice}>$ 50</Text>
+              <Text style={styles.productDesc}>
+                Minimal Stand is made of by natural wood. The design that is
+                very simple and minimal. This is truly one of the best
+                furnitures in any family for now. With 3 different colors, you
+                can easily select the best match for your home.
+              </Text>
 
-          <View style={styles.actionPanel}>
-            <TouchableOpacity activeOpacity={0.8} style={styles.bookmarkBtn}>
-              <BookMarkIcon fill={PRIMARY_COLOR} />
-            </TouchableOpacity>
-            <Button title="Contact Seller" style={styles.contacBtn} />
-          </View>
+              <View style={styles.actionPanel}>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  style={styles.bookmarkBtn}>
+                  <BookMarkIcon fill={PRIMARY_COLOR} />
+                </TouchableOpacity>
+                <Button title="Contact Seller" style={styles.contacBtn} />
+              </View>
+            </View>
+          </ScrollView>
         </View>
       </ImageBackground>
     </View>

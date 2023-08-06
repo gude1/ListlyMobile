@@ -31,7 +31,7 @@ const ScreenContainer = ({
     }
     return (
       <SafeAreaView style={[styles.container, containerStyle]}>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={true}>
           <View style={[styles.childCtn, style]}>{children}</View>
         </ScrollView>
       </SafeAreaView>
@@ -51,8 +51,8 @@ const styles = StyleSheet.create({
   childCtn: {
     width: '100%',
     maxWidth: 900,
-    paddingBottom: 10,
     flex: 1,
+    paddingBottom: 10,
     alignSelf: 'center',
     borderColor: 'purple',
   },
