@@ -37,7 +37,7 @@ const Settings = ({navigation}: SettingsProps) => {
         inputStyle={styles.input}
         inputCtnStyle={styles.inputCtn}
         keyboardType="email-address"
-        value="Owolabi Gideon"
+        value="gideoniyin2021@gmail.com"
         editable={false}
         labelStyle={styles.inputLabel}
       />

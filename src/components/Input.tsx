@@ -153,6 +153,7 @@ const styles = StyleSheet.create({
     lineHeight: 17.07,
     fontSize: 14,
     fontFamily: 'Montserrat',
+    color: '#000',
     height: 50,
   },
   passwordIcon: {

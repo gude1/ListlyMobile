@@ -13,6 +13,7 @@ import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import Button from '../../components/Button';
 import {SCREEN_HEIGHT} from '../../constants/lengths';
 import {AuthStackParamList} from '../../navigation/AuthStackNavigator';
+import {IMG_BACKGROUND_COLOR} from '../../constants/colors';
 
 type OnBoardProps = NativeStackScreenProps<AuthStackParamList, 'OnBoard'> & {};
 
@@ -70,6 +71,7 @@ const styles = StyleSheet.create({
   onboardSvg: {
     width: 357,
     height: 209,
+    backgroundColor: IMG_BACKGROUND_COLOR,
     marginTop: 50,
   },
   introTxt: {

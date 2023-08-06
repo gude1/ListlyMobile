@@ -96,6 +96,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     lineHeight: 17.07,
     fontSize: 14,
+    color: '#000',
     marginTop: 15,
   },
   termsLink: {
