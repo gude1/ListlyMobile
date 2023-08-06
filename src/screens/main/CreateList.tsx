@@ -22,8 +22,8 @@ type CreateListProps = NativeStackScreenProps<
 > & {};
 const CreateList = ({}: CreateListProps) => {
   return (
-    <ScreenContainer style={[styles.pageCtn]}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+    <ScreenContainer>
+      <View style={[styles.pageCtn]}>
         <Text style={styles.pageTitle}>Upload photos</Text>
         <View style={styles.uploadCtn}>
           <Pressable>
@@ -50,7 +50,7 @@ const CreateList = ({}: CreateListProps) => {
         <Input containerStyle={styles.ctnInput} label="Description" />
 
         <Button title="Submit" style={{marginTop: 24}} />
-      </ScrollView>
+      </View>
     </ScreenContainer>
   );
 };
@@ -61,6 +61,8 @@ const styles = StyleSheet.create({
   pageCtn: {
     paddingHorizontal: 20,
     alignItems: 'center',
+    alignSelf: 'center',
+    width: '100%',
     maxWidth: 700,
   },
   pageTitle: {

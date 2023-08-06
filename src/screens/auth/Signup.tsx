@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     paddingTop: 80,
     maxWidth: 500,
     width: '90%',
-    minHeight: SCREEN_HEIGHT,
+    // minHeight: SCREEN_HEIGHT,
     borderColor: 'green',
   },
   ctnInput: {

@@ -11,7 +11,7 @@ import OnBoardSvg from '../../assets/images/onboard.svg';
 import ScreenContainer from '../../components/ScreenContainer';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import Button from '../../components/Button';
-import {SCREEN_HEIGHT} from "../../constants/lengths";
+import {SCREEN_HEIGHT} from '../../constants/lengths';
 import {AuthStackParamList} from '../../navigation/AuthStackNavigator';
 
 type OnBoardProps = NativeStackScreenProps<AuthStackParamList, 'OnBoard'> & {};
@@ -19,44 +19,42 @@ type OnBoardProps = NativeStackScreenProps<AuthStackParamList, 'OnBoard'> & {};
 const OnBoard = ({navigation}: OnBoardProps) => {
   return (
     <ScreenContainer>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.container}>
-          <OnBoardSvg style={styles.onboardSvg} />
-          <Text style={styles.introTxt}>You’ll Find</Text>
-          <Text
-            style={[
-              styles.introTxt,
-              {
-                color: '#FCA34D',
-                marginTop: 2,
-                textDecorationLine: 'underline',
-              },
-            ]}>
-            All you need
-          </Text>
-          <Text
-            style={[
-              styles.introTxt,
-              {
-                marginTop: 2,
-              },
-            ]}>
-            Here!
-          </Text>
+      <View style={styles.container}>
+        <OnBoardSvg style={styles.onboardSvg} />
+        <Text style={styles.introTxt}>You’ll Find</Text>
+        <Text
+          style={[
+            styles.introTxt,
+            {
+              color: '#FCA34D',
+              marginTop: 2,
+              textDecorationLine: 'underline',
+            },
+          ]}>
+          All you need
+        </Text>
+        <Text
+          style={[
+            styles.introTxt,
+            {
+              marginTop: 2,
+            },
+          ]}>
+          Here!
+        </Text>
 
-          <Button
-            title="Sign Up"
-            style={{marginTop: 20}}
-            onPress={() => navigation.navigate('SignUp')}
-          />
-          <Button
-            title="Sign In"
-            style={{marginTop: 20, backgroundColor: 'transparent'}}
-            onPress={() => navigation.navigate('SignIn')}
-            textStyle={{color: '#4F63AC'}}
-          />
-        </View>
-      </ScrollView>
+        <Button
+          title="Sign Up"
+          style={{marginTop: 20}}
+          onPress={() => navigation.navigate('SignUp')}
+        />
+        <Button
+          title="Sign In"
+          style={{marginTop: 20, backgroundColor: 'transparent'}}
+          onPress={() => navigation.navigate('SignIn')}
+          textStyle={{color: '#4F63AC'}}
+        />
+      </View>
     </ScreenContainer>
   );
 };

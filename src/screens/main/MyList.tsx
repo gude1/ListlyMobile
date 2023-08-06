@@ -25,7 +25,7 @@ const MyList = ({navigation}: MyListProps) => {
   };
 
   return (
-    <ScreenContainer>
+    <ScreenContainer hidescroll>
       <FlatList
         data={[1, 2, 3]}
         style={{marginTop: 10}}

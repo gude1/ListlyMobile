@@ -7,38 +7,51 @@ import Button from '../../components/Button';
 import CheckBox from '@react-native-community/checkbox';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {AuthStackParamList} from '../../navigation/AuthStackNavigator';
+import {useAppDispatch} from '../../redux/hooks/hook';
+import {setUser} from '../../redux/slice/UserSlice';
 
 type SigninProps = NativeStackScreenProps<AuthStackParamList, 'SignIn'> & {};
 const Signin = ({navigation}: SigninProps) => {
+  const dispatch = useAppDispatch();
   return (
     <ScreenContainer>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.container}>
-          <Input
-            containerStyle={styles.ctnInput}
-            label="Email"
-            keyboardType="email-address"
-            textContentType="emailAddress"
-            placeholder="example@mail.com"
-          />
-          <Input
-            containerStyle={styles.ctnInput}
-            label="Password"
-            textContentType="password"
-            secureTextEntry
-            placeholder="****************"
-          />
-          <Button style={{marginTop: 25}} title="Sign In" />
-          <Text style={styles.navTxt}>
-            Don't have an account?{'  '}
-            <Text
-              style={styles.termsLink}
-              onPress={() => navigation.navigate('SignUp')}>
-              Sign Up
-            </Text>
+      {/* <ScrollView showsVerticalScrollIndicator={false}> */}
+      <View style={styles.container}>
+        <Input
+          containerStyle={styles.ctnInput}
+          label="Email"
+          keyboardType="email-address"
+          textContentType="emailAddress"
+          placeholder="example@mail.com"
+        />
+        <Input
+          containerStyle={styles.ctnInput}
+          label="Password"
+          textContentType="password"
+          secureTextEntry
+          placeholder="****************"
+        />
+        <Button
+          style={{marginTop: 25}}
+          title="Sign In"
+          onPress={() =>
+            dispatch(
+              setUser({
+                loggedIn: true,
+              }),
+            )
+          }
+        />
+        <Text style={styles.navTxt}>
+          Don't have an account?{'  '}
+          <Text
+            style={styles.termsLink}
+            onPress={() => navigation.navigate('SignUp')}>
+            Sign Up
           </Text>
-        </View>
-      </ScrollView>
+        </Text>
+      </View>
+      {/* </ScrollView> */}
     </ScreenContainer>
   );
 };
@@ -52,7 +65,7 @@ const styles = StyleSheet.create({
     paddingTop: 80,
     maxWidth: 500,
     width: '90%',
-    minHeight: SCREEN_HEIGHT,
+    // minHeight: SCREEN_HEIGHT,
     borderColor: 'green',
   },
   ctnInput: {

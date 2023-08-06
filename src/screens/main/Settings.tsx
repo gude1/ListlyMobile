@@ -15,41 +15,39 @@ type SettingsProps = NativeStackScreenProps<
 const Settings = ({navigation}: SettingsProps) => {
   return (
     <ScreenContainer style={{paddingHorizontal: 20}}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.header}>
-          <Text style={styles.headerText}>Personal Information</Text>
-          <EditSvg />
-        </View>
+      <View style={styles.header}>
+        <Text style={styles.headerText}>Personal Information</Text>
+        <EditSvg />
+      </View>
 
-        <Input
-          label="Name"
-          containerStyle={styles.inputOuterCtn}
-          inputStyle={styles.input}
-          inputCtnStyle={styles.inputCtn}
-          keyboardType="name-phone-pad"
-          value="Owolabi Gideon"
-          editable={false}
-          labelStyle={styles.inputLabel}
-        />
+      <Input
+        label="Name"
+        containerStyle={styles.inputOuterCtn}
+        inputStyle={styles.input}
+        inputCtnStyle={styles.inputCtn}
+        keyboardType="name-phone-pad"
+        value="Owolabi Gideon"
+        editable={false}
+        labelStyle={styles.inputLabel}
+      />
 
-        <Input
-          label="Email"
-          containerStyle={styles.inputOuterCtn}
-          inputStyle={styles.input}
-          inputCtnStyle={styles.inputCtn}
-          keyboardType="email-address"
-          value="Owolabi Gideon"
-          editable={false}
-          labelStyle={styles.inputLabel}
-        />
+      <Input
+        label="Email"
+        containerStyle={styles.inputOuterCtn}
+        inputStyle={styles.input}
+        inputCtnStyle={styles.inputCtn}
+        keyboardType="email-address"
+        value="Owolabi Gideon"
+        editable={false}
+        labelStyle={styles.inputLabel}
+      />
 
-        <View style={[styles.header, {marginTop: 49}]}>
-          <Text style={styles.headerText}>Help Center</Text>
-        </View>
-        <ActionPanel title="FAQ" />
-        <ActionPanel title="Contact Us" />
-        <ActionPanel title="Privacy & Terms" />
-      </ScrollView>
+      <View style={[styles.header, {marginTop: 49}]}>
+        <Text style={styles.headerText}>Help Center</Text>
+      </View>
+      <ActionPanel title="FAQ" />
+      <ActionPanel title="Contact Us" />
+      <ActionPanel title="Privacy & Terms" />
     </ScreenContainer>
   );
 };

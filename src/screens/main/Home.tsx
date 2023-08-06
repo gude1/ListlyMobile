@@ -70,9 +70,9 @@ const Home = ({navigation}: HomeProps) => {
     if (index == 2) {
       image = require('../../assets/images/8.jpg');
     } else if (index % 2 > 0) {
-      image = require('../../assets/images/10.jpg');
-    } else {
       image = require('../../assets/images/12.jpg');
+    } else {
+      image = require('../../assets/images/10.jpg');
     }
     return (
       <View style={styles.productItemCtn}>
@@ -85,7 +85,7 @@ const Home = ({navigation}: HomeProps) => {
   };
 
   return (
-    <ScreenContainer style={{maxWidth: 'auto'}}>
+    <ScreenContainer style={{maxWidth: 'auto'}} hidescroll>
       <View style={styles.productTypeCtn}>
         <FlatList
           data={CAT}

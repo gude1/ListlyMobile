@@ -19,7 +19,7 @@ const Favourite = ({navigation}: FavouriteProps) => {
   };
 
   return (
-    <ScreenContainer style={{maxWidth: 'auto'}}>
+    <ScreenContainer style={{maxWidth: 'auto'}} hidescroll>
       <FlatList
         data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]}
         style={{marginTop: 10}}
