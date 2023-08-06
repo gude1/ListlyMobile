@@ -95,7 +95,6 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     color: PRIMARY_COLOR,
     // fontFamily: 'Montserrat',
-    fontsize: 14,
     fontweight: '600',
   },
   inputLabel: {
