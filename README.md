@@ -1,5 +1,5 @@
 # ListlyMobile
-Listly mobile is an app where users can buy or sell their gadgets or goods to other users on the platform. This mobile app was built with reactnative typescript and is a work in progress
+Listly mobile is the mobile app for Listly an application that serves as a mini marketplace where users can buy or sell their products to other users on the platform. This mobile app was built with react-native typescript and is a work in progress
 
 https://github.com/gude1/ListlyMobile/assets/31147892/a3548fb5-2fcb-49d8-9a37-f63a9323dabc
 
@@ -12,7 +12,7 @@ https://github.com/gude1/ListlyMobile/assets/31147892/a3548fb5-2fcb-49d8-9a37-f6
 
 
 ## Features
-- Signup & Signin screen
+- Signup & Sign in screen
 - Profile update and editing screen
 * Marketplace(Product Listing) screen
 * Create A product listing screen
@@ -20,7 +20,7 @@ https://github.com/gude1/ListlyMobile/assets/31147892/a3548fb5-2fcb-49d8-9a37-f6
 
 
 ## Installation
-Ensure that react-native is properly configured for both ios and android development on your local machine<br/>
+Ensure that react-native is properly configured for both ios and Android development on your local machine<br/>
 https://reactnative.dev/docs/environment-setup
 
 ```bash
